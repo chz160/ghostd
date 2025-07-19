@@ -37,3 +37,4 @@ project/assembly_name="Ghostd"
 
 renderer/rendering_method="mobile"
 textures/vram_compression/import_etc2_astc=true
+fonts/multichannel_signed_distance_field/generate=true
