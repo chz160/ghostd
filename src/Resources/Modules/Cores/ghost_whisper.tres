@@ -1,0 +1,29 @@
+[gd_resource type="Resource" script_class="CoreModule" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://Scripts/Modules/CoreModule.cs" id="1"]
+
+[resource]
+script = ExtResource("1")
+ModuleId = "core_ghost_whisper"
+ModuleName = "Ghost Whisper"
+Description = "A mysterious core found in abandoned data centers. Its origins are unknown, but it exhibits unusual adaptive behaviors and seems to learn from digital echoes."
+Type = 0
+Rarity = 3
+AttackModifier = 5
+DefenseModifier = 5
+SpeedModifier = 5
+PowerModifier = 10
+AsciiArt = "    ░░░░░░
+   ░▒▒▓▒▒░
+  ░▒▓███▓▒░
+  ▒▓█████▓▒
+  ░▒▓███▓▒░
+   ░▒▒▓▒▒░
+    ░░░░░░"
+FlavorText = "\"I hear the echoes of a thousand deleted files...\" - Unknown origin"
+CorruptionLevel = 0.1
+Tags = PackedStringArray("mysterious", "adaptive", "echo")
+BaseHealth = 100
+BaseProcessingPower = 12
+StabilityRating = 0.85
+CoreArchitecture = "Echo Chamber Network"

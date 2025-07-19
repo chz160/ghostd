@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="BehaviorModule" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://Scripts/Modules/BehaviorModule.cs" id="1"]
+
+[resource]
+script = ExtResource("1")
+ModuleId = "behavior_tactician"
+ModuleName = "Tactician Matrix"
+Description = "A balanced behavior module that adapts its strategy based on battle conditions. Analyzes opponent patterns and adjusts tactics accordingly."
+Type = 1
+Rarity = 3
+AttackModifier = 5
+DefenseModifier = 5
+SpeedModifier = 0
+PowerModifier = 10
+AsciiArt = "  ╔═══╗
+  ║┌─┐║
+  ║│◊│║
+  ║└─┘║
+  ╚═══╝"
+FlavorText = "\"Victory through superior strategy.\" - Sun Tzu.exe"
+CorruptionLevel = 0.0
+Tags = PackedStringArray("balanced", "adaptive", "strategic")
+AggressionLevel = 0.5
+Adaptability = 0.9
+PrimaryPattern = "Adaptive Strategy"
+CombatRoutines = PackedStringArray("ANALYZE", "EXPLOIT_WEAKNESS", "TACTICAL_SHIFT")
+AttackWeight = 0.33
+DefendWeight = 0.33
+SpecialWeight = 0.34

@@ -1,0 +1,33 @@
+[gd_resource type="Resource" script_class="AugmentModule" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://Scripts/Modules/AugmentModule.cs" id="1"]
+
+[resource]
+script = ExtResource("1")
+ModuleId = "augment_null_field"
+ModuleName = "Null Field"
+Description = "Creates a localized reality distortion that negates all effects and abilities for both combatants temporarily."
+Type = 2
+Rarity = 4
+AttackModifier = 0
+DefenseModifier = 0
+SpeedModifier = 0
+PowerModifier = 15
+AsciiArt = "  ◯◯◯
+  ◯○◯
+  ◯◯◯"
+FlavorText = "\"In the void, all are equal.\" - Null Hypothesis"
+CorruptionLevel = 0.1
+Tags = PackedStringArray("nullify", "disable", "equalizer")
+AbilityName = "Reality Nullification"
+AbilityDescription = "Disable all augments and special abilities for 2 turns"
+CooldownTurns = 7.0
+PowerCost = 35.0
+TargetingMode = 2
+EffectPower = 1.0
+EffectDuration = 2.0
+EffectTags = PackedStringArray("nullify", "disable")
+ActivationCondition = "Manual"
+AutoTriggerThreshold = 0.0
+ActivationMessage = "INITIATING NULL FIELD... REALITY STABILIZING"
+EffectAnimation = "void_pulse"

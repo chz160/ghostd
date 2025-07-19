@@ -1,0 +1,29 @@
+[gd_resource type="Resource" script_class="BehaviorModule" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://Scripts/Modules/BehaviorModule.cs" id="1"]
+
+[resource]
+script = ExtResource("1")
+ModuleId = "behavior_chaos"
+ModuleName = "Chaos Weaver"
+Description = "An unpredictable behavior module that uses randomness as a weapon. Impossible to predict but sometimes self-defeating."
+Type = 1
+Rarity = 3
+AttackModifier = 10
+DefenseModifier = 0
+SpeedModifier = 10
+PowerModifier = 5
+AsciiArt = "  ┌?┬?┐
+  ├─╳─┤
+  │?│?│
+  └─┴─┘"
+FlavorText = "\"Madness is the emergency exit.\" - The Joker Protocol"
+CorruptionLevel = 0.15
+Tags = PackedStringArray("chaotic", "unpredictable", "random")
+AggressionLevel = 0.6
+Adaptability = 0.1
+PrimaryPattern = "Chaotic Flux"
+CombatRoutines = PackedStringArray("RANDOM_BURST", "CHAOS_STORM", "ENTROPY_WAVE")
+AttackWeight = 0.4
+DefendWeight = 0.2
+SpecialWeight = 0.4

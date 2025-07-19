@@ -1,0 +1,250 @@
+[gd_scene load_steps=2 format=3 uid="uid://baiassembly"]
+
+[ext_resource type="Script" path="res://Scripts/UI/AIAssembly.cs" id="1_aiassembly"]
+
+[node name="AIAssembly" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_aiassembly")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.05, 0.05, 0.05, 1)
+
+[node name="Container" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="Label" parent="Container"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.2, 1, 0.2, 1)
+theme_override_font_sizes/font_size = 24
+text = "AI ASSEMBLY TERMINAL"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="Container"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="ModuleSlots" type="VBoxContainer" parent="Container"]
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="CoreSlot" type="Button" parent="Container/ModuleSlots"]
+layout_mode = 2
+custom_minimum_size = Vector2(0, 50)
+theme_override_colors/font_color = Color(0.2, 1, 0.2, 1)
+theme_override_colors/font_hover_color = Color(0.4, 1, 0.4, 1)
+text = "CORE: [EMPTY]"
+
+[node name="BehaviorSlot" type="Button" parent="Container/ModuleSlots"]
+layout_mode = 2
+custom_minimum_size = Vector2(0, 50)
+theme_override_colors/font_color = Color(0.2, 1, 0.2, 1)
+theme_override_colors/font_hover_color = Color(0.4, 1, 0.4, 1)
+text = "BEHAVIOR: [EMPTY]"
+
+[node name="AugmentSlot" type="Button" parent="Container/ModuleSlots"]
+layout_mode = 2
+custom_minimum_size = Vector2(0, 50)
+theme_override_colors/font_color = Color(0.2, 1, 0.2, 1)
+theme_override_colors/font_hover_color = Color(0.4, 1, 0.4, 1)
+text = "AUGMENT: [EMPTY]"
+
+[node name="HSeparator2" type="HSeparator" parent="Container"]
+layout_mode = 2
+
+[node name="DisplayContainer" type="HBoxContainer" parent="Container"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="AssemblyPanel" type="Panel" parent="Container/DisplayContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+modulate = Color(0.2, 1, 0.2, 0.1)
+
+[node name="AssemblyDisplay" type="RichTextLabel" parent="Container/DisplayContainer/AssemblyPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0.2, 1, 0.2, 1)
+theme_override_font_sizes/normal_font_size = 14
+bbcode_enabled = true
+text = "[color=#00ff00]═══ AI ASSEMBLY ═══[/color]
+
+Select modules to begin assembly..."
+
+[node name="VSeparator" type="VSeparator" parent="Container/DisplayContainer"]
+layout_mode = 2
+
+[node name="StatsPanel" type="Panel" parent="Container/DisplayContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+modulate = Color(0.2, 1, 0.2, 0.1)
+
+[node name="StatsDisplay" type="RichTextLabel" parent="Container/DisplayContainer/StatsPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0.2, 1, 0.2, 1)
+theme_override_font_sizes/normal_font_size = 14
+bbcode_enabled = true
+text = "[color=#00ff00]═══ COMBINED STATS ═══[/color]
+
+Select all modules to see combined stats..."
+
+[node name="Actions" type="HBoxContainer" parent="Container"]
+layout_mode = 2
+alignment = 1
+
+[node name="ClearButton" type="Button" parent="Container/Actions"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 0.5, 0.5, 1)
+theme_override_colors/font_hover_color = Color(1, 0.7, 0.7, 1)
+text = "CLEAR ASSEMBLY"
+
+[node name="AssembleButton" type="Button" parent="Container/Actions"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.2, 1, 0.2, 1)
+theme_override_colors/font_hover_color = Color(0.4, 1, 0.4, 1)
+theme_override_colors/font_disabled_color = Color(0.3, 0.3, 0.3, 1)
+text = "ASSEMBLE AI"
+disabled = true
+
+[node name="StatusLabel" type="Label" parent="Container"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7, 0.7, 0.7, 1)
+theme_override_font_sizes/font_size = 12
+text = "Select modules to assemble your AI..."
+horizontal_alignment = 1
+
+[node name="BackButton" type="Button" parent="Container"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.5, 0.5, 0.5, 1)
+theme_override_colors/font_hover_color = Color(0.7, 0.7, 0.7, 1)
+text = "< BACK TO TERMINAL [ESC]"
+
+[node name="ModuleSelectionPanel" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -400.0
+offset_right = 300.0
+offset_bottom = 400.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Border" type="Panel" parent="ModuleSelectionPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+modulate = Color(0.2, 1, 0.2, 1)
+
+[node name="Background" type="ColorRect" parent="ModuleSelectionPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = -2.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.05, 0.05, 0.05, 1)
+
+[node name="VBox" type="VBoxContainer" parent="ModuleSelectionPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="Label" parent="ModuleSelectionPanel/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.2, 1, 0.2, 1)
+theme_override_font_sizes/font_size = 18
+text = "SELECT MODULE"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="ModuleSelectionPanel/VBox"]
+layout_mode = 2
+
+[node name="ModuleList" type="ItemList" parent="ModuleSelectionPanel/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.2, 1, 0.2, 1)
+theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
+theme_override_colors/guide_color = Color(0.2, 1, 0.2, 0.2)
+
+[node name="HSeparator2" type="HSeparator" parent="ModuleSelectionPanel/VBox"]
+layout_mode = 2
+
+[node name="ModulePreview" type="RichTextLabel" parent="ModuleSelectionPanel/VBox"]
+layout_mode = 2
+custom_minimum_size = Vector2(0, 200)
+theme_override_colors/default_color = Color(0.2, 1, 0.2, 1)
+theme_override_font_sizes/normal_font_size = 12
+bbcode_enabled = true
+text = "Select a module to preview..."
+
+[node name="Actions" type="HBoxContainer" parent="ModuleSelectionPanel/VBox"]
+layout_mode = 2
+
+[node name="CancelButton" type="Button" parent="ModuleSelectionPanel/VBox/Actions"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 0.5, 0.5, 1)
+text = "CANCEL"
+
+[node name="SelectButton" type="Button" parent="ModuleSelectionPanel/VBox/Actions"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.2, 1, 0.2, 1)
+text = "SELECT"

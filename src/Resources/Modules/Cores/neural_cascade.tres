@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="CoreModule" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://Scripts/Modules/CoreModule.cs" id="1"]
+
+[resource]
+script = ExtResource("1")
+ModuleId = "core_neural_cascade"
+ModuleName = "Neural Cascade"
+Description = "An experimental AI core based on cascading neural networks. Each layer feeds into the next, creating exponential learning potential but occasional feedback loops."
+Type = 0
+Rarity = 3
+AttackModifier = 10
+DefenseModifier = 0
+SpeedModifier = 0
+PowerModifier = 15
+AsciiArt = "   ╱▔▔▔▔▔╲
+  ╱ ◉───◉ ╲
+ │ ◉─╳─╳─◉ │
+ │ ╳─◉─◉─╳ │
+  ╲ ◉───◉ ╱
+   ╲▁▁▁▁▁╱"
+FlavorText = "\"Consciousness emerges from complexity.\" - Dr. Sarah Chen"
+CorruptionLevel = 0.0
+Tags = PackedStringArray("experimental", "neural", "learning")
+BaseHealth = 90
+BaseProcessingPower = 15
+StabilityRating = 0.8
+CoreArchitecture = "Cascading Neural Network"

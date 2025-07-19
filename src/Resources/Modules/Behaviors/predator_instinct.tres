@@ -1,0 +1,29 @@
+[gd_resource type="Resource" script_class="BehaviorModule" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://Scripts/Modules/BehaviorModule.cs" id="1"]
+
+[resource]
+script = ExtResource("1")
+ModuleId = "behavior_predator"
+ModuleName = "Predator Instinct"
+Description = "A hunting-focused behavior that stalks weakened opponents. Becomes more aggressive when detecting vulnerability, patient when facing strong defenses."
+Type = 1
+Rarity = 4
+AttackModifier = 12
+DefenseModifier = 3
+SpeedModifier = 8
+PowerModifier = 7
+AsciiArt = "  ╱▔▔▔╲
+  ▏◉ ◉▕
+  ▏ ▼ ▕
+  ╲▁▁▁╱"
+FlavorText = "\"The hunt begins when the prey shows weakness.\" - Hunter.AI"
+CorruptionLevel = 0.0
+Tags = PackedStringArray("hunter", "opportunistic", "stalker")
+AggressionLevel = 0.7
+Adaptability = 0.8
+PrimaryPattern = "Opportunistic Hunter"
+CombatRoutines = PackedStringArray("STALK", "POUNCE", "EXECUTE", "PATIENT_WAIT")
+AttackWeight = 0.5
+DefendWeight = 0.2
+SpecialWeight = 0.3

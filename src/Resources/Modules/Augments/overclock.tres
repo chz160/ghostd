@@ -1,0 +1,33 @@
+[gd_resource type="Resource" script_class="AugmentModule" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://Scripts/Modules/AugmentModule.cs" id="1"]
+
+[resource]
+script = ExtResource("1")
+ModuleId = "augment_overclock"
+ModuleName = "Overclock"
+Description = "Pushes all systems beyond safe limits, dramatically increasing all stats at the risk of system damage."
+Type = 2
+Rarity = 3
+AttackModifier = 0
+DefenseModifier = 0
+SpeedModifier = 5
+PowerModifier = 0
+AsciiArt = "  ▲▲▲
+  ███
+  ▼▼▼"
+FlavorText = "\"Red line? What red line?\" - Last words of Unit 7734"
+CorruptionLevel = 0.05
+Tags = PackedStringArray("boost", "risky", "performance")
+AbilityName = "System Overclock"
+AbilityDescription = "Boost all stats by 50% for 3 turns, take 10 damage per turn"
+CooldownTurns = 5.0
+PowerCost = 25.0
+TargetingMode = 0
+EffectPower = 50.0
+EffectDuration = 3.0
+EffectTags = PackedStringArray("boost", "self-damage")
+ActivationCondition = "Manual"
+AutoTriggerThreshold = 0.0
+ActivationMessage = "WARNING: EXCEEDING OPERATIONAL PARAMETERS"
+EffectAnimation = "overclock_sparks"

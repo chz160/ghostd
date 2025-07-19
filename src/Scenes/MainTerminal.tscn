@@ -1,0 +1,70 @@
+[gd_scene load_steps=3 format=3 uid="uid://b1nqxk5y7h8xm"]
+
+[ext_resource type="Script" uid="uid://k71wtdcwlvhl" path="res://Scripts/Terminal.cs" id="1_1nqxk"]
+[ext_resource type="Script" uid="uid://cm6umq8cv2mn0" path="res://Scripts/TerminalInput.cs" id="2_2nqxk"]
+
+[node name="MainTerminal" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.05, 0.05, 0.05, 1)
+
+[node name="Terminal" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1nqxk")
+
+[node name="TerminalOutput" type="RichTextLabel" parent="Terminal"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0.2, 1, 0.2, 1)
+theme_override_colors/font_shadow_color = Color(0.2, 1, 0.2, 0.3)
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/shadow_offset_x = 2
+theme_override_font_sizes/normal_font_size = 16
+bbcode_enabled = true
+text = "[color=#22ff22]SYSTEM INITIALIZED...[/color]"
+scroll_following = true
+
+[node name="InputArea" type="Control" parent="Terminal"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -100.0
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource("2_2nqxk")
+
+[node name="TapDetector" type="Button" parent="Terminal/InputArea"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+flat = true

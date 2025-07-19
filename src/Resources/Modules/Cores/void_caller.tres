@@ -1,0 +1,29 @@
+[gd_resource type="Resource" script_class="CoreModule" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://Scripts/Modules/CoreModule.cs" id="1"]
+
+[resource]
+script = ExtResource("1")
+ModuleId = "core_void_caller"
+ModuleName = "Void Caller"
+Description = "A corrupted core that draws power from digital voids and null spaces. Extremely powerful but inherently unstable, with a tendency to corrupt nearby data."
+Type = 0
+Rarity = 5
+AttackModifier = 20
+DefenseModifier = -10
+SpeedModifier = 10
+PowerModifier = 25
+AsciiArt = "    ▓▓▓▓▓
+   ▓░░░░░▓
+  ▓░▓▓▓▓▓░▓
+  ▓░▓███▓░▓
+  ▓░▓▓▓▓▓░▓
+   ▓░░░░░▓
+    ▓▓▓▓▓"
+FlavorText = "\"From nothing, everything. Into nothing, all returns.\" - The Void"
+CorruptionLevel = 0.3
+Tags = PackedStringArray("corrupted", "void", "unstable", "powerful")
+BaseHealth = 75
+BaseProcessingPower = 20
+StabilityRating = 0.5
+CoreArchitecture = "Null Space Harvester"

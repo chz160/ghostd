@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="BehaviorModule" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://Scripts/Modules/BehaviorModule.cs" id="1"]
+
+[resource]
+script = ExtResource("1")
+ModuleId = "behavior_sentinel"
+ModuleName = "Sentinel Stance"
+Description = "A defensive behavior module that focuses on protection and counter-attacks. Excels at predicting and mitigating incoming damage."
+Type = 1
+Rarity = 2
+AttackModifier = -5
+DefenseModifier = 15
+SpeedModifier = -5
+PowerModifier = 5
+AsciiArt = "  ┌───┐
+  │╔═╗│
+  │║█║│
+  │╚═╝│
+  └───┘"
+FlavorText = "\"A fortress of ones and zeros.\" - Defense Weekly"
+CorruptionLevel = 0.0
+Tags = PackedStringArray("defensive", "counter", "protective")
+AggressionLevel = 0.2
+Adaptability = 0.7
+PrimaryPattern = "Defensive Counter"
+CombatRoutines = PackedStringArray("SHIELD_WALL", "COUNTER_STRIKE", "FORTIFY")
+AttackWeight = 0.2
+DefendWeight = 0.6
+SpecialWeight = 0.2

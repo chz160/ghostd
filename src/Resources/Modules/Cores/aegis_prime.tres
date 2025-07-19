@@ -1,0 +1,29 @@
+[gd_resource type="Resource" script_class="CoreModule" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://Scripts/Modules/CoreModule.cs" id="1"]
+
+[resource]
+script = ExtResource("1")
+ModuleId = "core_aegis_prime"
+ModuleName = "Aegis Prime"
+Description = "A military-grade defensive core designed for maximum survivability. Features redundant systems and self-repair protocols at the cost of processing speed."
+Type = 0
+Rarity = 3
+AttackModifier = -5
+DefenseModifier = 20
+SpeedModifier = -10
+PowerModifier = 0
+AsciiArt = "  ┌─────────┐
+  │ ▀▄   ▄▀ │
+  │ ▄█▀█▀█▄ │
+  │█▀█████▀█│
+  │ ▀█▄█▄█▀ │
+  │   ▀▀▀   │
+  └─────────┘"
+FlavorText = "\"The best offense is an impenetrable defense.\" - Aegis Systems Ltd."
+CorruptionLevel = 0.0
+Tags = PackedStringArray("defensive", "stable", "military")
+BaseHealth = 150
+BaseProcessingPower = 8
+StabilityRating = 0.95
+CoreArchitecture = "Hardened Defense Matrix"

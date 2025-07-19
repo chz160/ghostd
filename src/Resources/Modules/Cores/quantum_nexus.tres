@@ -1,0 +1,29 @@
+[gd_resource type="Resource" script_class="CoreModule" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://Scripts/Modules/CoreModule.cs" id="1"]
+
+[resource]
+script = ExtResource("1")
+ModuleId = "core_quantum_nexus"
+ModuleName = "Quantum Nexus"
+Description = "An advanced quantum computing core that processes multiple realities simultaneously. High power output but reduced stability due to quantum uncertainty."
+Type = 0
+Rarity = 4
+AttackModifier = 0
+DefenseModifier = 0
+SpeedModifier = 15
+PowerModifier = 30
+AsciiArt = "    ╔═══╗
+   ╔╝▓▓▓╚╗
+  ╔╝▓█▓█▓╚╗
+  ║▓█▓█▓█▓║
+  ╚╗▓█▓█▓╔╝
+   ╚╗▓▓▓╔╝
+    ╚═══╝"
+FlavorText = "\"Reality is merely a persistent illusion.\" - Q-Core v3.14"
+CorruptionLevel = 0.0
+Tags = PackedStringArray("quantum", "unstable", "high-power")
+BaseHealth = 80
+BaseProcessingPower = 25
+StabilityRating = 0.7
+CoreArchitecture = "Quantum Entanglement Matrix"

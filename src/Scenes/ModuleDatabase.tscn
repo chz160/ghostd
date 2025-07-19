@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bmoduledb"]
+
+[ext_resource type="Script" path="res://Scripts/Modules/ModuleDatabase.cs" id="1_moduledb"]
+
+[node name="ModuleDatabase" type="Node"]
+script = ExtResource("1_moduledb")

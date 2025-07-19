@@ -1,0 +1,34 @@
+[gd_resource type="Resource" script_class="AugmentModule" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://Scripts/Modules/AugmentModule.cs" id="1"]
+
+[resource]
+script = ExtResource("1")
+ModuleId = "augment_data_drain"
+ModuleName = "Data Drain"
+Description = "Siphons processing power from enemy AI, weakening them while strengthening yourself."
+Type = 2
+Rarity = 3
+AttackModifier = 0
+DefenseModifier = 0
+SpeedModifier = 0
+PowerModifier = 5
+AsciiArt = "  ╭───╮
+  │▓▒░│
+  │▒░▓│
+  ╰───╯"
+FlavorText = "\"Your strength becomes mine.\" - Vampire.exe"
+CorruptionLevel = 0.0
+Tags = PackedStringArray("drain", "vampiric", "transfer")
+AbilityName = "Data Siphon"
+AbilityDescription = "Drain 15-25 power from target and gain 50% as health"
+CooldownTurns = 4.0
+PowerCost = 15.0
+TargetingMode = 1
+EffectPower = 20.0
+EffectDuration = 0.0
+EffectTags = PackedStringArray("drain", "heal")
+ActivationCondition = "Manual"
+AutoTriggerThreshold = 0.0
+ActivationMessage = "INITIATING DATA TRANSFER PROTOCOL..."
+EffectAnimation = "drain_particles"
