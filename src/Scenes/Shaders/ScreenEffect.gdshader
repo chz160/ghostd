@@ -26,38 +26,38 @@ uniform sampler2D screen_texture: hint_screen_texture, filter_linear_mipmap;
 void fragment() {
 	// Convert to centered coordinates (-1 to 1)
 	vec2 centered_uv = SCREEN_UV * 2.0 - 1.0;
-	
+
 	// Apply barrel distortion for CRT curve
 	vec2 uv_offset = centered_uv.yx / curvature;
 	vec2 warped_uv = centered_uv + centered_uv * uv_offset * uv_offset;
-	
+
 	// Create black border outside curved area
 	vec3 cutoff = vec3(step(abs(warped_uv.x), 1.0) * step(abs(warped_uv.y), 1.0));
-	
+
 	// Generate scanlines
 	// scanline_brightness is the center value, intensity is the variation
 	vec3 scanlines = vec3(sin(2.0 * warped_uv.y * scanline_density) * scanline_intensity + scanline_brightness);
-	
+
 	// Create vignette effect
 	vec3 vignette = vec3(length(pow(abs(centered_uv), vec2(vignette_falloff)) / 3.0));
-	
+
 	// Sample the screen with slight blur
 	vec3 screen_color = textureLod(screen_texture, (warped_uv + 1.0) / 2.0, blur_amount).rgb;
-	
+
 	//screen_color -= vignette * vignette_strength;
-	
+
 	// Apply all effects
-	screen_color *= cutoff;        // Black border
+	//screen_color *= cutoff;        // Black border
 	screen_color *= scanlines;     // Scanline effect
-	screen_color -= vignette * vignette_strength;  // Vignette darkening
+	//screen_color -= vignette * vignette_strength;  // Vignette darkening
 	screen_color *= brightness;    // Overall brightness
-	
+
 	// Apply subtle color tint (classic green terminal look)
 	screen_color = mix(screen_color, screen_color * tint_color, tint_strength);
-	
+
 	// Ensure we don't go below 0
 	screen_color = max(vec3(0.0), screen_color);
-	
+
 	COLOR = vec4(screen_color, 1.0);
 }
 
