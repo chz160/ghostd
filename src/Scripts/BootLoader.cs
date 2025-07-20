@@ -3,8 +3,6 @@ using Godot;
 public partial class BootLoader : Control
 {
 	private RichTextLabel _bootText;
-	private float _bootTimer = 0f;
-	private float _bootDuration = 2.0f;
 	
 	public override void _Ready()
 	{
@@ -29,7 +27,7 @@ public partial class BootLoader : Control
 			_bootText.Text = "[center]LOADING TERMINAL...[/center]";
 		};
 		
-		var timer3 = GetTree().CreateTimer(_bootDuration);
+		var timer3 = GetTree().CreateTimer(2.0f);
 		timer3.Timeout += () =>
 		{
 			GD.Print("BootLoader: Third timer fired (2.0s) - Showing MainTitle");
@@ -58,7 +56,7 @@ public partial class BootLoader : Control
 		GD.Print("BootLoader: MainTitle animation completed, transitioning to MainTerminal");
 		
 		// Add a short delay before transitioning
-		var timer = GetTree().CreateTimer(1.0f);
+		var timer = GetTree().CreateTimer(3.0f);
 		timer.Timeout += () =>
 		{
 			ChangeScene();
