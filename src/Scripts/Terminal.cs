@@ -121,7 +121,9 @@ public partial class Terminal : Control
 			progressBar.QueueFree();
 		};
 		
-		progressBar.StartProgress(this, "INITIALIZING", 3.0f, 25);
+		// Use width of 18 for safety on small screens
+		// Format: "INITIALIZING [██████████████████] 100%"
+		progressBar.StartProgress(this, "INITIALIZING", 3.0f, 18);
 	}
 	
 	public override void _Process(double delta)

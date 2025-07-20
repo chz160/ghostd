@@ -18,6 +18,9 @@ namespace Ghostd.UI
 		private const int DEFAULT_WIDTH = 20;
 		private const float DEFAULT_DURATION = 2.0f;
 		
+		// Maximum width to prevent wrapping on small screens
+		private const int MAX_WIDTH = 20;
+		
 		// Progress tracking
 		private float _progress = 0.0f;
 		private float _duration;
@@ -47,7 +50,8 @@ namespace Ghostd.UI
 			_terminal = terminal;
 			_label = label;
 			_duration = duration;
-			_width = width;
+			// Clamp width to prevent wrapping on small screens
+			_width = Mathf.Min(width, MAX_WIDTH);
 			_messageType = messageType;
 			_progress = 0.0f;
 			_elapsedTime = 0.0f;

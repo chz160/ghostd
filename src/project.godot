@@ -22,8 +22,8 @@ ModuleDatabase="*res://Scenes/ModuleDatabase.tscn"
 
 [display]
 
-window/size/viewport_width=390
-window/size/viewport_height=844
+window/size/viewport_width=360
+window/size/viewport_height=800
 window/size/initial_position_type=3
 window/stretch/mode="viewport"
 window/stretch/aspect="expand"
