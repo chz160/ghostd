@@ -1,6 +1,24 @@
-[gd_scene load_steps=2 format=3 uid="uid://c1nqxk5y7h8xm"]
+[gd_scene load_steps=5 format=3 uid="uid://c1nqxk5y7h8xm"]
 
 [ext_resource type="Script" uid="uid://cbloot362jpq3" path="res://Scripts/BootLoader.cs" id="1_boot"]
+[ext_resource type="Shader" uid="uid://dxl227gj4hfoi" path="res://Scenes/Shaders/ScreenEffect.gdshader" id="2_5a2ll"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_iley7"]
+shader = ExtResource("2_5a2ll")
+shader_parameter/curvature = 7.0
+shader_parameter/scanline_intensity = 0.1
+shader_parameter/scanline_density = 400.0
+shader_parameter/scanline_brightness = 0.9
+shader_parameter/vignette_strength = 1.5
+shader_parameter/vignette_falloff = 4.0
+shader_parameter/blur_amount = 0.3
+shader_parameter/brightness = 1.0
+shader_parameter/tint_color = Color(0.2, 1, 0.2, 1)
+shader_parameter/tint_strength = 0.1
+
+[sub_resource type="QuadMesh" id="QuadMesh_iksjx"]
+size = Vector2(360, 800)
+center_offset = Vector3(180, 400, 0)
 
 [node name="BootScene" type="Control"]
 layout_mode = 3
@@ -37,3 +55,9 @@ theme_override_colors/default_color = Color(0.2, 1, 0.2, 1)
 theme_override_font_sizes/normal_font_size = 24
 bbcode_enabled = true
 text = "[center]BOOTING...[/center]"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_iley7")
+mesh = SubResource("QuadMesh_iksjx")
