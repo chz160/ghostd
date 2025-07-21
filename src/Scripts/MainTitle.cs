@@ -15,8 +15,19 @@ public partial class MainTitle : Control
 	
 	// Animation parameters
 	private float drawProgress = 0.0f;
-	private bool isAnimating = true;
 	private float animationSpeed = 2.0f;
+	
+	// Make DrawProgress animatable by AnimationPlayer
+	[Export]
+	public float DrawProgress 
+	{ 
+		get => drawProgress; 
+		set 
+		{ 
+			drawProgress = Mathf.Clamp(value, 0.0f, 1.0f);
+			QueueRedraw();
+		}
+	}
 	
 	// GHOSTD logo pixel data - clean main text without built-in glitch pixels
 	private int[,] ghostPixels = new int[,] {
@@ -50,13 +61,8 @@ public partial class MainTitle : Control
 	
 	public override void _Ready()
 	{
-		// Start the drawing animation
-		var tween = CreateTween();
-		tween.TweenProperty(this, "drawProgress", 1.0f, 3.0f);
-		tween.TweenCallback(Callable.From(() => {
-			isAnimating = false;
-			EmitSignal(SignalName.AnimationCompleted);
-		}));
+		// Animation is now controlled by AnimationPlayer, not started automatically
+		GD.Print("MainTitle: Ready, waiting for AnimationPlayer to control DrawProgress");
 	}
 	
 	public override void _Draw()
@@ -104,7 +110,7 @@ public partial class MainTitle : Control
 			
 			for (int x = 0; x < logoWidth; x++)
 			{
-				if (currentPixel >= pixelsToShow && isAnimating)
+				if (currentPixel >= pixelsToShow)
 					break;
 					
 				if (ghostPixels[y, x] == 1)
@@ -134,7 +140,7 @@ public partial class MainTitle : Control
 				currentPixel++;
 			}
 			
-			if (currentPixel >= pixelsToShow && isAnimating)
+			if (currentPixel >= pixelsToShow)
 				break;
 		}
 		
@@ -200,12 +206,10 @@ public partial class MainTitle : Control
 		basePixelSize = Mathf.Max(size, 1.0f);
 	}
 	
-	public void RestartAnimation()
+	// Called when animation completes (can be called by AnimationPlayer)
+	public void OnAnimationComplete()
 	{
-		drawProgress = 0.0f;
-		isAnimating = true;
-		var tween = CreateTween();
-		tween.TweenProperty(this, "drawProgress", 1.0f, 3.0f);
-		tween.TweenCallback(Callable.From(() => isAnimating = false));
+		EmitSignal(SignalName.AnimationCompleted);
+		GD.Print("MainTitle: Animation completed signal emitted");
 	}
 }

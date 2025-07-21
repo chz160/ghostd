@@ -3,67 +3,39 @@ using Godot;
 public partial class BootLoader : Control
 {
 	private RichTextLabel _bootText;
+	private AnimationPlayer _animationPlayer;
 	
 	public override void _Ready()
 	{
 		GD.Print("BootLoader: _Ready() called");
 		
 		_bootText = GetNode<RichTextLabel>("BootText");
+		_animationPlayer = GetNode<AnimationPlayer>("AnimationPlayer");
 		
 		// Set responsive font size for boot text
 		UpdateBootTextSize();
 		
-		var timer = GetTree().CreateTimer(0.5f);
-		timer.Timeout += () =>
-		{
-			GD.Print("BootLoader: First timer fired (0.5s)");
-			_bootText.Text = "[center]INITIALIZING GHOSTD...[/center]";
-		};
+		// Connect to viewport size changes
+		GetViewport().SizeChanged += OnViewportSizeChanged;
 		
-		var timer2 = GetTree().CreateTimer(1.5f);
-		timer2.Timeout += () =>
-		{
-			GD.Print("BootLoader: Second timer fired (1.5s)");
-			_bootText.Text = "[center]LOADING TERMINAL...[/center]";
-		};
-		
-		var timer3 = GetTree().CreateTimer(2.0f);
-		timer3.Timeout += () =>
-		{
-			GD.Print("BootLoader: Third timer fired (2.0s) - Showing MainTitle");
-			ShowMainTitle();
-		};
+		// Animation is handled by AnimationPlayer (autoplay)
+		GD.Print("BootLoader: AnimationPlayer will handle boot sequence");
 	}
 	
-	private void ShowMainTitle()
+	private void OnViewportSizeChanged()
 	{
-		// Hide boot text
-		_bootText.Visible = false;
-		
-		// Create and add MainTitle
-		var mainTitle = new MainTitle();
-		mainTitle.SetAnchorsAndOffsetsPreset(Control.LayoutPreset.FullRect);
-		AddChild(mainTitle);
-		
-		// Connect to animation completed signal
-		mainTitle.AnimationCompleted += OnMainTitleAnimationCompleted;
-		
-		GD.Print("BootLoader: MainTitle added and animation started");
+		UpdateBootTextSize();
 	}
 	
-	private void OnMainTitleAnimationCompleted()
+	// Called by AnimationPlayer at appropriate time
+	public void OnMainTitleAnimationCompleted()
 	{
-		GD.Print("BootLoader: MainTitle animation completed, transitioning to MainTerminal");
-		
-		// Add a short delay before transitioning
-		var timer = GetTree().CreateTimer(3.0f);
-		timer.Timeout += () =>
-		{
-			ChangeScene();
-		};
+		GD.Print("BootLoader: MainTitle animation completed");
+		// This is now just a marker for logging, actual wait is in animation
 	}
 	
-	private void ChangeScene()
+	// Called by AnimationPlayer at 8.0s
+	public void ChangeScene()
 	{
 		GD.Print("BootLoader: ChangeScene() called");
 		var result = GetTree().ChangeSceneToFile("res://Scenes/MainTerminal.tscn");
@@ -71,7 +43,6 @@ public partial class BootLoader : Control
 		if (result != Error.Ok)
 		{
 			GD.PrintErr($"BootLoader: Scene change failed with error: {result}");
-			// Can't update _bootText since it's hidden, maybe show an error dialog
 		}
 		else
 		{
@@ -81,7 +52,7 @@ public partial class BootLoader : Control
 	
 	private void UpdateBootTextSize()
 	{
-		if (ResolutionManager.Instance != null)
+		if (ResolutionManager.Instance != null && _bootText != null)
 		{
 			int baseFontSize = 24;
 			int scaledFontSize = ResolutionManager.GetScaledFontSize(baseFontSize);
