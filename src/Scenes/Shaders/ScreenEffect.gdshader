@@ -14,7 +14,7 @@ uniform float vignette_strength : hint_range(0.0, 3.0, 0.1) = 1.5;
 uniform float vignette_falloff : hint_range(2.0, 8.0, 0.5) = 4.0;
 
 // Blur amount (simulates CRT phosphor blur)
-uniform float blur_amount : hint_range(0.0, 1.0, 0.1) = 0.3;
+uniform float blur_amount : hint_range(0.0, 1.0, 0.1) = 0.2;
 
 // Color adjustments
 uniform float brightness : hint_range(0.5, 1.5, 0.05) = 1.0;
@@ -47,9 +47,9 @@ void fragment() {
 	//screen_color -= vignette * vignette_strength;
 
 	// Apply all effects
-	//screen_color *= cutoff;        // Black border
+	screen_color *= cutoff;        // Black border
 	screen_color *= scanlines;     // Scanline effect
-	//screen_color -= vignette * vignette_strength;  // Vignette darkening
+	screen_color -= vignette * vignette_strength;  // Vignette darkening
 	screen_color *= brightness;    // Overall brightness
 
 	// Apply subtle color tint (classic green terminal look)
