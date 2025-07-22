@@ -1,122 +1,21 @@
-[gd_scene load_steps=8 format=3 uid="uid://c1nqxk5y7h8xm"]
+[gd_scene load_steps=7 format=3 uid="uid://c1nqxk5y7h8xm"]
 
 [ext_resource type="Script" uid="uid://cbloot362jpq3" path="res://Scripts/BootLoader.cs" id="1_t0cjq"]
+[ext_resource type="PackedScene" uid="uid://cwqg6c73ykxpm" path="res://Scenes/TerminalText.tscn" id="2_iksjx"]
 [ext_resource type="Script" uid="uid://cjsikux5t8v3r" path="res://Scripts/MainTitle.cs" id="2_mtitl"]
-[ext_resource type="Shader" uid="uid://dxl227gj4hfoi" path="res://Scenes/Shaders/ScreenEffect.gdshader" id="3_seffx"]
-
-[sub_resource type="Animation" id="Animation_BootSequence"]
-resource_name = "BootSequence"
-length = 8.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("BootText:text")
-tracks/0/interp = 0
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5, 1.5),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": ["[center]BOOTING...[/center]", "[center]INITIALIZING GHOSTD...[/center]", "[center]LOADING TERMINAL...[/center]"]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("BootText:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("BootText:modulate:a")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 1.9, 2),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [1.0, 1.0, 0.0]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("MainTitle:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("MainTitle:modulate:a")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 2, 2.2),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [0.0, 0.0, 1.0]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("MainTitle:DrawProgress")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0, 2, 5),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [0.0, 0.0, 1.0]
-}
-tracks/6/type = "method"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath(".")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(5, 8),
-"transitions": PackedFloat32Array(1, 1),
-"values": [{
-"args": [],
-"method": &"OnMainTitleAnimationCompleted"
-}, {
-"args": [],
-"method": &"ChangeScene"
-}]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_1"]
-_data = {
-&"BootSequence": SubResource("Animation_BootSequence")
-}
+[ext_resource type="Shader" uid="uid://q0t2mjwtjd6e" path="res://Scenes/Shaders/Scanlines.gdshader" id="4_iksjx"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1"]
-shader = ExtResource("3_seffx")
-shader_parameter/curvature = 7.0
+shader = ExtResource("4_iksjx")
 shader_parameter/scanline_intensity = 0.1
 shader_parameter/scanline_density = 400.0
 shader_parameter/scanline_brightness = 0.9
-shader_parameter/vignette_strength = 1.5
-shader_parameter/vignette_falloff = 4.0
 shader_parameter/blur_amount = 0.3
 shader_parameter/brightness = 1.0
-shader_parameter/tint_color = Color(0.2, 1, 0.2, 1)
-shader_parameter/tint_strength = 0.1
 
 [sub_resource type="QuadMesh" id="QuadMesh_1"]
-size = Vector2(500, 500)
+size = Vector2(360, 800)
+center_offset = Vector3(180, 400, 0)
 
 [node name="BootScene" type="Control"]
 layout_mode = 3
@@ -136,24 +35,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[node name="BootText" type="RichTextLabel" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -200.0
-offset_top = -50.0
-offset_right = 200.0
-offset_bottom = 50.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/default_color = Color(0.2, 1, 0.2, 1)
-theme_override_font_sizes/normal_font_size = 24
-bbcode_enabled = true
-text = "[center]BOOTING...[/center]"
-fit_content = true
+[node name="TerminalText" parent="." instance=ExtResource("2_iksjx")]
 
 [node name="MainTitle" type="Control" parent="."]
 visible = false
@@ -166,18 +48,11 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("2_mtitl")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_1")
-}
-autoplay = "BootSequence"
-
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = 2
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="CanvasLayer"]
-visible = false
 z_index = 100
 material = SubResource("ShaderMaterial_1")
-position = Vector2(250, 250)
+position = Vector2(-1, -1)
 mesh = SubResource("QuadMesh_1")

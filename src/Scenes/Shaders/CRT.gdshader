@@ -44,8 +44,6 @@ void fragment() {
 	// Sample the screen with slight blur
 	vec3 screen_color = textureLod(screen_texture, (warped_uv + 1.0) / 2.0, blur_amount).rgb;
 
-	//screen_color -= vignette * vignette_strength;
-
 	// Apply all effects
 	screen_color *= cutoff;        // Black border
 	screen_color *= scanlines;     // Scanline effect

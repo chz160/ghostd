@@ -79,7 +79,7 @@ public partial class ResolutionManager : Node
 		SafeAreaBottom = ScreenSize.Y * (SafeAreaBottomPercent / 100f);
 		
 		GD.Print($"ResolutionManager: UIScale={UIScale:F2}, PixelScale={PixelScale:F2}, " +
-		         $"SafeAreas(T:{SafeAreaTop:F0}, B:{SafeAreaBottom:F0})");
+				 $"SafeAreas(T:{SafeAreaTop:F0}, B:{SafeAreaBottom:F0})");
 	}
 	
 	// Helper methods - kept for compatibility but simplified
