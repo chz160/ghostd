@@ -40,7 +40,7 @@ This repository contains the entire source code and assets for version 1 (MVP) o
 
 1. **Godot Version**: This project uses **Godot 4**
 2. Clone the repo
-3. Open the project in Godot C#
+3. Open the project in Godot GDScript
 4. Set the target platform (Android or iOS)
 5. Run `MainTerminal` scene to begin
 

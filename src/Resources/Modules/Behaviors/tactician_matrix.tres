@@ -1,30 +1,30 @@
 [gd_resource type="Resource" script_class="BehaviorModule" load_steps=2 format=3]
 
-[ext_resource type="Script" path="res://Scripts/Modules/BehaviorModule.cs" id="1"]
+[ext_resource type="Script" path="res://Scripts/Modules/BehaviorModule.gd" id="1"]
 
 [resource]
 script = ExtResource("1")
-ModuleId = "behavior_tactician"
-ModuleName = "Tactician Matrix"
-Description = "A balanced behavior module that adapts its strategy based on battle conditions. Analyzes opponent patterns and adjusts tactics accordingly."
-Type = 1
-Rarity = 3
-AttackModifier = 5
-DefenseModifier = 5
-SpeedModifier = 0
-PowerModifier = 10
-AsciiArt = "  ╔═══╗
+module_id = "behavior_tactician"
+module_name = "Tactician Matrix"
+description = "A balanced behavior module that adapts its strategy based on battle conditions. Analyzes opponent patterns and adjusts tactics accordingly."
+type = 1
+rarity = 3
+attack_modifier = 5
+defense_modifier = 5
+speed_modifier = 0
+power_modifier = 10
+ascii_art = "  ╔═══╗
   ║┌─┐║
   ║│◊│║
   ║└─┘║
   ╚═══╝"
-FlavorText = "\"Victory through superior strategy.\" - Sun Tzu.exe"
-CorruptionLevel = 0.0
-Tags = PackedStringArray("balanced", "adaptive", "strategic")
-AggressionLevel = 0.5
-Adaptability = 0.9
-PrimaryPattern = "Adaptive Strategy"
-CombatRoutines = PackedStringArray("ANALYZE", "EXPLOIT_WEAKNESS", "TACTICAL_SHIFT")
-AttackWeight = 0.33
-DefendWeight = 0.33
-SpecialWeight = 0.34
+flavor_text = "\"Victory through superior strategy.\" - Sun Tzu.exe"
+corruption_level = 0.0
+tags = PackedStringArray("balanced", "adaptive", "strategic")
+aggression_level = 0.5
+adaptability = 0.9
+primary_pattern = "Adaptive Strategy"
+combat_routines = PackedStringArray("ANALYZE", "EXPLOIT_WEAKNESS", "TACTICAL_SHIFT")
+attack_weight = 0.33
+defend_weight = 0.33
+special_weight = 0.34

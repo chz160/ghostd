@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://c1nqxk5y7h8xm"]
 
-[ext_resource type="Script" uid="uid://cbloot362jpq3" path="res://Scripts/BootLoader.cs" id="1_t0cjq"]
+[ext_resource type="Script" path="res://Scripts/BootLoader.gd" id="1_t0cjq"]
 [ext_resource type="PackedScene" uid="uid://cwqg6c73ykxpm" path="res://Scenes/TerminalText.tscn" id="2_iksjx"]
-[ext_resource type="Script" uid="uid://cjsikux5t8v3r" path="res://Scripts/MainTitle.cs" id="2_mtitl"]
+[ext_resource type="Script" path="res://Scripts/MainTitle.gd" id="2_mtitl"]
 [ext_resource type="Shader" uid="uid://q0t2mjwtjd6e" path="res://Scenes/Shaders/Scanlines.gdshader" id="4_iksjx"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1"]

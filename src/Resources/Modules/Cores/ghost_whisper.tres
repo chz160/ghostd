@@ -1,29 +1,29 @@
 [gd_resource type="Resource" script_class="CoreModule" load_steps=2 format=3]
 
-[ext_resource type="Script" path="res://Scripts/Modules/CoreModule.cs" id="1"]
+[ext_resource type="Script" path="res://Scripts/Modules/CoreModule.gd" id="1"]
 
 [resource]
 script = ExtResource("1")
-ModuleId = "core_ghost_whisper"
-ModuleName = "Ghost Whisper"
-Description = "A mysterious core found in abandoned data centers. Its origins are unknown, but it exhibits unusual adaptive behaviors and seems to learn from digital echoes."
-Type = 0
-Rarity = 3
-AttackModifier = 5
-DefenseModifier = 5
-SpeedModifier = 5
-PowerModifier = 10
-AsciiArt = "    ░░░░░░
+module_id = "core_ghost_whisper"
+module_name = "Ghost Whisper"
+description = "A mysterious core found in abandoned data centers. Its origins are unknown, but it exhibits unusual adaptive behaviors and seems to learn from digital echoes."
+type = 0
+rarity = 3
+attack_modifier = 5
+defense_modifier = 5
+speed_modifier = 5
+power_modifier = 10
+ascii_art = "    ░░░░░░
    ░▒▒▓▒▒░
   ░▒▓███▓▒░
   ▒▓█████▓▒
   ░▒▓███▓▒░
    ░▒▒▓▒▒░
     ░░░░░░"
-FlavorText = "\"I hear the echoes of a thousand deleted files...\" - Unknown origin"
-CorruptionLevel = 0.1
-Tags = PackedStringArray("mysterious", "adaptive", "echo")
-BaseHealth = 100
-BaseProcessingPower = 12
-StabilityRating = 0.85
-CoreArchitecture = "Echo Chamber Network"
+flavor_text = "\"I hear the echoes of a thousand deleted files...\" - Unknown origin"
+corruption_level = 0.1
+tags = PackedStringArray("mysterious", "adaptive", "echo")
+base_health = 100
+base_processing_power = 12
+stability_rating = 0.85
+core_architecture = "Echo Chamber Network"

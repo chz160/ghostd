@@ -1,30 +1,30 @@
 [gd_resource type="Resource" script_class="BehaviorModule" load_steps=2 format=3]
 
-[ext_resource type="Script" path="res://Scripts/Modules/BehaviorModule.cs" id="1"]
+[ext_resource type="Script" path="res://Scripts/Modules/BehaviorModule.gd" id="1"]
 
 [resource]
 script = ExtResource("1")
-ModuleId = "behavior_sentinel"
-ModuleName = "Sentinel Stance"
-Description = "A defensive behavior module that focuses on protection and counter-attacks. Excels at predicting and mitigating incoming damage."
-Type = 1
-Rarity = 2
-AttackModifier = -5
-DefenseModifier = 15
-SpeedModifier = -5
-PowerModifier = 5
-AsciiArt = "  ┌───┐
+module_id = "behavior_sentinel"
+module_name = "Sentinel Stance"
+description = "A defensive behavior module that focuses on protection and counter-attacks. Excels at predicting and mitigating incoming damage."
+type = 1
+rarity = 2
+attack_modifier = -5
+defense_modifier = 15
+speed_modifier = -5
+power_modifier = 5
+ascii_art = "  ┌───┐
   │╔═╗│
   │║█║│
   │╚═╝│
   └───┘"
-FlavorText = "\"A fortress of ones and zeros.\" - Defense Weekly"
-CorruptionLevel = 0.0
-Tags = PackedStringArray("defensive", "counter", "protective")
-AggressionLevel = 0.2
-Adaptability = 0.7
-PrimaryPattern = "Defensive Counter"
-CombatRoutines = PackedStringArray("SHIELD_WALL", "COUNTER_STRIKE", "FORTIFY")
-AttackWeight = 0.2
-DefendWeight = 0.6
-SpecialWeight = 0.2
+flavor_text = "\"A fortress of ones and zeros.\" - Defense Weekly"
+corruption_level = 0.0
+tags = PackedStringArray("defensive", "counter", "protective")
+aggression_level = 0.2
+adaptability = 0.7
+primary_pattern = "Defensive Counter"
+combat_routines = PackedStringArray("SHIELD_WALL", "COUNTER_STRIKE", "FORTIFY")
+attack_weight = 0.2
+defend_weight = 0.6
+special_weight = 0.2

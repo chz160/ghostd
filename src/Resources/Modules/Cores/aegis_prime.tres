@@ -1,29 +1,29 @@
 [gd_resource type="Resource" script_class="CoreModule" load_steps=2 format=3]
 
-[ext_resource type="Script" path="res://Scripts/Modules/CoreModule.cs" id="1"]
+[ext_resource type="Script" path="res://Scripts/Modules/CoreModule.gd" id="1"]
 
 [resource]
 script = ExtResource("1")
-ModuleId = "core_aegis_prime"
-ModuleName = "Aegis Prime"
-Description = "A military-grade defensive core designed for maximum survivability. Features redundant systems and self-repair protocols at the cost of processing speed."
-Type = 0
-Rarity = 3
-AttackModifier = -5
-DefenseModifier = 20
-SpeedModifier = -10
-PowerModifier = 0
-AsciiArt = "  ┌─────────┐
+module_id = "core_aegis_prime"
+module_name = "Aegis Prime"
+description = "A military-grade defensive core designed for maximum survivability. Features redundant systems and self-repair protocols at the cost of processing speed."
+type = 0
+rarity = 3
+attack_modifier = -5
+defense_modifier = 20
+speed_modifier = -10
+power_modifier = 0
+ascii_art = "  ┌─────────┐
   │ ▀▄   ▄▀ │
   │ ▄█▀█▀█▄ │
   │█▀█████▀█│
   │ ▀█▄█▄█▀ │
   │   ▀▀▀   │
   └─────────┘"
-FlavorText = "\"The best offense is an impenetrable defense.\" - Aegis Systems Ltd."
-CorruptionLevel = 0.0
-Tags = PackedStringArray("defensive", "stable", "military")
-BaseHealth = 150
-BaseProcessingPower = 8
-StabilityRating = 0.95
-CoreArchitecture = "Hardened Defense Matrix"
+flavor_text = "\"The best offense is an impenetrable defense.\" - Aegis Systems Ltd."
+corruption_level = 0.0
+tags = PackedStringArray("defensive", "stable", "military")
+base_health = 150
+base_processing_power = 8
+stability_rating = 0.95
+core_architecture = "Hardened Defense Matrix"

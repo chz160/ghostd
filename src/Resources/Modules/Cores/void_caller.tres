@@ -1,29 +1,29 @@
 [gd_resource type="Resource" script_class="CoreModule" load_steps=2 format=3]
 
-[ext_resource type="Script" path="res://Scripts/Modules/CoreModule.cs" id="1"]
+[ext_resource type="Script" path="res://Scripts/Modules/CoreModule.gd" id="1"]
 
 [resource]
 script = ExtResource("1")
-ModuleId = "core_void_caller"
-ModuleName = "Void Caller"
-Description = "A corrupted core that draws power from digital voids and null spaces. Extremely powerful but inherently unstable, with a tendency to corrupt nearby data."
-Type = 0
-Rarity = 5
-AttackModifier = 20
-DefenseModifier = -10
-SpeedModifier = 10
-PowerModifier = 25
-AsciiArt = "    ▓▓▓▓▓
+module_id = "core_void_caller"
+module_name = "Void Caller"
+description = "A corrupted core that draws power from digital voids and null spaces. Extremely powerful but inherently unstable, with a tendency to corrupt nearby data."
+type = 0
+rarity = 5
+attack_modifier = 20
+defense_modifier = -10
+speed_modifier = 10
+power_modifier = 25
+ascii_art = "    ▓▓▓▓▓
    ▓░░░░░▓
   ▓░▓▓▓▓▓░▓
   ▓░▓███▓░▓
   ▓░▓▓▓▓▓░▓
    ▓░░░░░▓
     ▓▓▓▓▓"
-FlavorText = "\"From nothing, everything. Into nothing, all returns.\" - The Void"
-CorruptionLevel = 0.3
-Tags = PackedStringArray("corrupted", "void", "unstable", "powerful")
-BaseHealth = 75
-BaseProcessingPower = 20
-StabilityRating = 0.5
-CoreArchitecture = "Null Space Harvester"
+flavor_text = "\"From nothing, everything. Into nothing, all returns.\" - The Void"
+corruption_level = 0.3
+tags = PackedStringArray("corrupted", "void", "unstable", "powerful")
+base_health = 75
+base_processing_power = 20
+stability_rating = 0.5
+core_architecture = "Null Space Harvester"

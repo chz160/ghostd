@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://b1nqxk5y7h8xm"]
 
-[ext_resource type="Script" uid="uid://k71wtdcwlvhl" path="res://Scripts/Terminal.cs" id="1_1nqxk"]
-[ext_resource type="Script" uid="uid://cm6umq8cv2mn0" path="res://Scripts/TerminalInput.cs" id="2_2nqxk"]
+[ext_resource type="Script" path="res://Scripts/Terminal.gd" id="1_1nqxk"]
+[ext_resource type="Script" path="res://Scripts/TerminalInput.gd" id="2_2nqxk"]
 
 [node name="MainTerminal" type="Control"]
 layout_mode = 3

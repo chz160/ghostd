@@ -1,34 +1,34 @@
 [gd_resource type="Resource" script_class="AugmentModule" load_steps=2 format=3]
 
-[ext_resource type="Script" path="res://Scripts/Modules/AugmentModule.cs" id="1"]
+[ext_resource type="Script" path="res://Scripts/Modules/AugmentModule.gd" id="1"]
 
 [resource]
 script = ExtResource("1")
-ModuleId = "augment_logic_bomb"
-ModuleName = "Logic Bomb"
-Description = "Plants a devastating logical paradox in the enemy's code, causing massive damage after a delay."
-Type = 2
-Rarity = 4
-AttackModifier = 5
-DefenseModifier = 0
-SpeedModifier = 0
-PowerModifier = 10
-AsciiArt = "  ╔═╗
+module_id = "augment_logic_bomb"
+module_name = "Logic Bomb"
+description = "Plants a devastating logical paradox in the enemy's code, causing massive damage after a delay."
+type = 2
+rarity = 4
+attack_modifier = 5
+defense_modifier = 0
+speed_modifier = 0
+power_modifier = 10
+ascii_art = "  ╔═╗
   ║◊║
   ╚═╝
   ***"
-FlavorText = "\"This statement is false.\" - Paradox Generator v2"
-CorruptionLevel = 0.0
-Tags = PackedStringArray("explosive", "delayed", "devastating")
-AbilityName = "Paradox Payload"
-AbilityDescription = "Plant a logic bomb that detonates after 2 turns for massive damage"
-CooldownTurns = 6.0
-PowerCost = 30.0
-TargetingMode = 1
-EffectPower = 50.0
-EffectDuration = 2.0
-EffectTags = PackedStringArray("damage", "delayed")
-ActivationCondition = "Manual"
-AutoTriggerThreshold = 0.0
-ActivationMessage = "PARADOX LOADED... COUNTDOWN INITIATED"
-EffectAnimation = "bomb_timer"
+flavor_text = "\"This statement is false.\" - Paradox Generator v2"
+corruption_level = 0.0
+tags = PackedStringArray("explosive", "delayed", "devastating")
+ability_name = "Paradox Payload"
+ability_description = "Plant a logic bomb that detonates after 2 turns for massive damage"
+cooldown_turns = 6.0
+power_cost = 30.0
+targeting_mode = 1
+effect_power = 50.0
+effect_duration = 2.0
+effect_tags = PackedStringArray("damage", "delayed")
+activation_condition = "Manual"
+auto_trigger_threshold = 0.0
+activation_message = "PARADOX LOADED... COUNTDOWN INITIATED"
+effect_animation = "bomb_timer"

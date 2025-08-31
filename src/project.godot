@@ -12,14 +12,14 @@ config_version=5
 
 config/name="Ghostd"
 run/main_scene="res://Scenes/BootScene.tscn"
-config/features=PackedStringArray("4.4", "C#", "Mobile")
+config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://icon.svg"
 
 [autoload]
 
 ResolutionManager="*res://Scenes/ResolutionManager.tscn"
 ModuleDatabase="*res://Scenes/ModuleDatabase.tscn"
-Global="*res://Scripts/Global.cs"
+Global="*res://Scripts/Global.gd"
 
 [display]
 

@@ -1,29 +1,29 @@
 [gd_resource type="Resource" script_class="CoreModule" load_steps=2 format=3]
 
-[ext_resource type="Script" path="res://Scripts/Modules/CoreModule.cs" id="1"]
+[ext_resource type="Script" path="res://Scripts/Modules/CoreModule.gd" id="1"]
 
 [resource]
 script = ExtResource("1")
-ModuleId = "core_quantum_nexus"
-ModuleName = "Quantum Nexus"
-Description = "An advanced quantum computing core that processes multiple realities simultaneously. High power output but reduced stability due to quantum uncertainty."
-Type = 0
-Rarity = 4
-AttackModifier = 0
-DefenseModifier = 0
-SpeedModifier = 15
-PowerModifier = 30
-AsciiArt = "    ╔═══╗
+module_id = "core_quantum_nexus"
+module_name = "Quantum Nexus"
+description = "An advanced quantum computing core that processes multiple realities simultaneously. High power output but reduced stability due to quantum uncertainty."
+type = 0
+rarity = 4
+attack_modifier = 0
+defense_modifier = 0
+speed_modifier = 15
+power_modifier = 30
+ascii_art = "    ╔═══╗
    ╔╝▓▓▓╚╗
   ╔╝▓█▓█▓╚╗
   ║▓█▓█▓█▓║
   ╚╗▓█▓█▓╔╝
    ╚╗▓▓▓╔╝
     ╚═══╝"
-FlavorText = "\"Reality is merely a persistent illusion.\" - Q-Core v3.14"
-CorruptionLevel = 0.0
-Tags = PackedStringArray("quantum", "unstable", "high-power")
-BaseHealth = 80
-BaseProcessingPower = 25
-StabilityRating = 0.7
-CoreArchitecture = "Quantum Entanglement Matrix"
+flavor_text = "\"Reality is merely a persistent illusion.\" - Q-Core v3.14"
+corruption_level = 0.0
+tags = PackedStringArray("quantum", "unstable", "high-power")
+base_health = 80
+base_processing_power = 25
+stability_rating = 0.7
+core_architecture = "Quantum Entanglement Matrix"

@@ -1,34 +1,34 @@
 [gd_resource type="Resource" script_class="AugmentModule" load_steps=2 format=3]
 
-[ext_resource type="Script" path="res://Scripts/Modules/AugmentModule.cs" id="1"]
+[ext_resource type="Script" path="res://Scripts/Modules/AugmentModule.gd" id="1"]
 
 [resource]
 script = ExtResource("1")
-ModuleId = "augment_firewall"
-ModuleName = "Firewall Surge"
-Description = "Deploys an emergency defensive barrier that absorbs incoming damage for a short duration."
-Type = 2
-Rarity = 2
-AttackModifier = 0
-DefenseModifier = 5
-SpeedModifier = 0
-PowerModifier = 0
-AsciiArt = "  ████
+module_id = "augment_firewall"
+module_name = "Firewall Surge"
+description = "Deploys an emergency defensive barrier that absorbs incoming damage for a short duration."
+type = 2
+rarity = 2
+attack_modifier = 0
+defense_modifier = 5
+speed_modifier = 0
+power_modifier = 0
+ascii_art = "  ████
   █──█
   █──█
   ████"
-FlavorText = "\"Access denied.\" - Standard firewall response"
-CorruptionLevel = 0.0
-Tags = PackedStringArray("defensive", "shield", "protection")
-AbilityName = "Emergency Firewall"
-AbilityDescription = "Generate a 30-point damage shield for 3 turns"
-CooldownTurns = 5.0
-PowerCost = 20.0
-TargetingMode = 0
-EffectPower = 30.0
-EffectDuration = 3.0
-EffectTags = PackedStringArray("shield")
-ActivationCondition = "LowHealth"
-AutoTriggerThreshold = 0.3
-ActivationMessage = "FIREWALL PROTOCOLS ENGAGED!"
-EffectAnimation = "shield_bubble"
+flavor_text = "\"Access denied.\" - Standard firewall response"
+corruption_level = 0.0
+tags = PackedStringArray("defensive", "shield", "protection")
+ability_name = "Emergency Firewall"
+ability_description = "Generate a 30-point damage shield for 3 turns"
+cooldown_turns = 5.0
+power_cost = 20.0
+targeting_mode = 0
+effect_power = 30.0
+effect_duration = 3.0
+effect_tags = PackedStringArray("shield")
+activation_condition = "LowHealth"
+auto_trigger_threshold = 0.3
+activation_message = "FIREWALL PROTOCOLS ENGAGED!"
+effect_animation = "shield_bubble"

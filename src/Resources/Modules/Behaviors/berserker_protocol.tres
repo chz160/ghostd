@@ -1,30 +1,30 @@
 [gd_resource type="Resource" script_class="BehaviorModule" load_steps=2 format=3]
 
-[ext_resource type="Script" path="res://Scripts/Modules/BehaviorModule.cs" id="1"]
+[ext_resource type="Script" path="res://Scripts/Modules/BehaviorModule.gd" id="1"]
 
 [resource]
 script = ExtResource("1")
-ModuleId = "behavior_berserker"
-ModuleName = "Berserker Protocol"
-Description = "An aggressive combat routine that prioritizes overwhelming offense. Attack patterns become more erratic as damage is sustained."
-Type = 1
-Rarity = 2
-AttackModifier = 15
-DefenseModifier = -10
-SpeedModifier = 5
-PowerModifier = 0
-AsciiArt = "  ╔═╦═╗
+module_id = "behavior_berserker"
+module_name = "Berserker Protocol"
+description = "An aggressive combat routine that prioritizes overwhelming offense. Attack patterns become more erratic as damage is sustained."
+type = 1
+rarity = 2
+attack_modifier = 15
+defense_modifier = -10
+speed_modifier = 5
+power_modifier = 0
+ascii_art = "  ╔═╦═╗
   ║▓║▓║
   ╠═╬═╣
   ║▓║▓║
   ╚═╩═╝"
-FlavorText = "\"DESTROY. DESTROY. DESTROY.\" - Combat log #451"
-CorruptionLevel = 0.0
-Tags = PackedStringArray("aggressive", "reckless", "combat")
-AggressionLevel = 0.9
-Adaptability = 0.3
-PrimaryPattern = "Relentless Assault"
-CombatRoutines = PackedStringArray("FURY_STRIKE", "RAGE_BURST", "BERSERK_RUSH")
-AttackWeight = 0.7
-DefendWeight = 0.1
-SpecialWeight = 0.2
+flavor_text = "\"DESTROY. DESTROY. DESTROY.\" - Combat log #451"
+corruption_level = 0.0
+tags = PackedStringArray("aggressive", "reckless", "combat")
+aggression_level = 0.9
+adaptability = 0.3
+primary_pattern = "Relentless Assault"
+combat_routines = PackedStringArray("FURY_STRIKE", "RAGE_BURST", "BERSERK_RUSH")
+attack_weight = 0.7
+defend_weight = 0.1
+special_weight = 0.2

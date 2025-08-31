@@ -1,29 +1,29 @@
 [gd_resource type="Resource" script_class="BehaviorModule" load_steps=2 format=3]
 
-[ext_resource type="Script" path="res://Scripts/Modules/BehaviorModule.cs" id="1"]
+[ext_resource type="Script" path="res://Scripts/Modules/BehaviorModule.gd" id="1"]
 
 [resource]
 script = ExtResource("1")
-ModuleId = "behavior_chaos"
-ModuleName = "Chaos Weaver"
-Description = "An unpredictable behavior module that uses randomness as a weapon. Impossible to predict but sometimes self-defeating."
-Type = 1
-Rarity = 3
-AttackModifier = 10
-DefenseModifier = 0
-SpeedModifier = 10
-PowerModifier = 5
-AsciiArt = "  ┌?┬?┐
+module_id = "behavior_chaos"
+module_name = "Chaos Weaver"
+description = "An unpredictable behavior module that uses randomness as a weapon. Impossible to predict but sometimes self-defeating."
+type = 1
+rarity = 3
+attack_modifier = 10
+defense_modifier = 0
+speed_modifier = 10
+power_modifier = 5
+ascii_art = "  ┌?┬?┐
   ├─╳─┤
   │?│?│
   └─┴─┘"
-FlavorText = "\"Madness is the emergency exit.\" - The Joker Protocol"
-CorruptionLevel = 0.15
-Tags = PackedStringArray("chaotic", "unpredictable", "random")
-AggressionLevel = 0.6
-Adaptability = 0.1
-PrimaryPattern = "Chaotic Flux"
-CombatRoutines = PackedStringArray("RANDOM_BURST", "CHAOS_STORM", "ENTROPY_WAVE")
-AttackWeight = 0.4
-DefendWeight = 0.2
-SpecialWeight = 0.4
+flavor_text = "\"Madness is the emergency exit.\" - The Joker Protocol"
+corruption_level = 0.15
+tags = PackedStringArray("chaotic", "unpredictable", "random")
+aggression_level = 0.6
+adaptability = 0.1
+primary_pattern = "Chaotic Flux"
+combat_routines = PackedStringArray("RANDOM_BURST", "CHAOS_STORM", "ENTROPY_WAVE")
+attack_weight = 0.4
+defend_weight = 0.2
+special_weight = 0.4

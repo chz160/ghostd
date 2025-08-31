@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://cwqg6c73ykxpm"]
 
-[ext_resource type="Script" uid="uid://bxulj7h3w54lx" path="res://Scripts/TerminalText.cs" id="1_sx04f"]
+[ext_resource type="Script" path="res://Scripts/TerminalText.gd" id="1_sx04f"]
 [ext_resource type="FontFile" uid="uid://bhmll05nt0vq4" path="res://Resources/Fonts/MEGAMAN10.ttf" id="2_ayhg2"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sx04f"]
