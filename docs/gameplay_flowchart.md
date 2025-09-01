@@ -4,7 +4,7 @@
 
 **Working Title:** TBD (Candidates include *Ghostd*, *Blackline*, *VOIDRUN*, *EXE*, *0DAY*)
 
-**Core Concept:** A terminal-themed rogue AI auto-battler where players design modular AIs and pit them against procedurally generated opponents in a retro cyberpunk setting. Victory allows players to salvage modules and evolve their agent.
+**Core Concept:** A proximity-based terminal-themed auto-battler where players design modular AIs and battle other players within physical range (~100m). The game encourages local, in-person competition with a retro cyberpunk aesthetic. Victory allows players to salvage modules and evolve their agent.
 
 **Aesthetic:**
 - Terminal/command line UI (tap-only, no required typing)
@@ -14,9 +14,10 @@
 
 **Gameplay Loop:**
 1. Build AI from 3 parts: Core, Behavior, Augment
-2. Battle a wild AI (auto-resolved, turn-based)
-3. Salvage a new part if victorious
-4. Rebuild, optimize, and repeat
+2. Scan for nearby players (proximity-based)
+3. Challenge & battle detected players (server-validated)
+4. Salvage a new part if victorious
+5. Rebuild, optimize, and climb local leaderboards
 
 **Modules (v1):**
 - ~5 Cores
@@ -25,38 +26,56 @@
 - 5+ Wild AI opponents with unique combinations
 
 **Battle Details:**
-- Fully automated
-- Short duration (3–6 rounds)
-- Outcome decided by stat resolution and module synergy
+- Fully automated, server-authoritative
+- Short duration (30-90 seconds)
+- Proximity validation prevents spoofing
+- Outcome decided by module synergy
+
+**Location & Privacy:**
+- 100m battle range, 500m discovery
+- Privacy modes: Precise/Fuzzy/Ghost
+- Battery-aware GPS updates
+- Safe zones auto-disable battles
 
 **Progression:**
-- Local module collection (Archive)
-- Salvage screen post-victory
-- Unlock new modules through victories
+- Module collection synced to cloud
+- Local & global leaderboards
+- Area-based rankings
+- Weekly tournaments
 
-**Planned MVP Features:**
-- Local gameplay only (no network or cloud)
+**MVP Features:**
+- Proximity-based PvP battles
+- Fallback: LAN → Ghost → AI battles
 - Terminal-style UI with touch-friendly interaction
 - Small but diverse module pool
 - Sound and ambient design
-- Save/load system
+- Location privacy controls
+- Cloud save with offline mode
 
 **Post-MVP Ideas:**
-- AI ghost sharing or passive PvP
+- AI ghost sharing
 - Cosmetic terminal themes
 - Rare event encounters and glitches
+
+**Safety Features:**
+- No text chat (emotes only)
+- Battle cooldowns per player
+- Age-gated location features
+- Report/block functionality
 
 ---
 
 ### Core Game Loop
 
-1. **Build AI** – Assemble an AI using available Core, Behavior, and Augment modules from the Archive.
-2. **Run Battle** – Deploy AI into a terminal-simulated auto-battle against a procedurally generated Wild AI.
-3. **Resolve Outcome**:
-   - Victory: Salvage 1 of 3 offered modules and add it to Archive.
-   - Defeat: No reward, but keep current AI and modules.
-4. **Evolve** – Reconfigure AI with newly acquired modules to test new strategies.
-5. **Repeat** – Continue battling, collecting, and evolving in short play sessions.
+1. **Build AI** – Assemble an AI using Core, Behavior, and Augment modules from your collection.
+2. **Scan Area** – Detect nearby players within 500m discovery radius, with possible general direction indicator.
+3. **Challenge Player** – Select opponent within 100m battle range (or use fallback mode). Distance could be dynamic based on the density of local players. For instance NYC might have a smaller battle range that 100m due to more players being in the area.
+4. **Battle** – Server-validated combat with terminal-style visualization.
+5. **Resolve Outcome**:
+   - Victory: Salvage 1 of 3 opponent modules
+   - Defeat: Gain XP, learn from loss
+6. **Evolve** – Reconfigure AI with new modules and strategies.
+7. **Climb Rankings** – Progress through local area and global leaderboards.
 
 ---
 
@@ -69,13 +88,16 @@
 
 ### 2. Your Terminal (Main Hub)
 **Main Options:**
-- `[ RUN AI ]` → Starts a battle sequence
+- `[ SCAN AREA ]` → Detect nearby players
 - `[ RECONFIGURE ]` → Opens AI builder screen
 - `[ ARCHIVE ]` → View collected modules
-- `[ SETTINGS ]` → Sound, Theme, Accessibility
+- `[ RANKINGS ]` → Local/Global leaderboards
+- `[ SETTINGS ]` → Privacy, Sound, Theme
 
 First-time user:
-- Walkthrough triggers with a faux AI voice log: “Initializing rogue instance…”
+- Location permission request
+- Privacy mode selection (Precise/Fuzzy/Ghost)
+- Tutorial: "Detecting local network nodes..."
 
 ---
 
@@ -89,44 +111,117 @@ First-time user:
 
 ---
 
-### 4. Run AI (Battle)
+### 4. Scan Area (Proximity Detection)
 **Flow:**
-- Screen shows entering corrupted datastream...
-- Match found: Wild AI schematic appears
-- Battle log animates each round in fake-terminal style
-- Battle ends → Victory or Defeat
+- Terminal shows: "Scanning corrupted datastream..."
+- Radar-style UI shows nearby players
+- List displays:
+  - Players within 100m (can battle)
+  - Players 100-500m (approaching)
+  - Privacy-respecting display names
 
-Victory:
-- Salvage screen (choose 1 of 3 modules)
-- Auto-saves new module to Archive
-- Option to immediately equip or store
+**Fallback Options:**
+- No players nearby → Show Ghost battles
+- No Ghosts → Generate AI opponent
+- Offline mode → Local AI only
 
-Defeat:
-- AI survives but gains no modules
-- Option to retry or reconfigure
+### 5. Battle Sequence
+**Initiation:**
+- Select opponent from scan results
+- Send challenge (with cooldown)
+- Both players must accept within 60s
+
+**Battle Flow:**
+- "Establishing secure connection..."
+- Server validates proximity
+- Terminal shows real-time battle log
+- 30-90 second automated combat
+- Results validated server-side
+
+**Victory:**
+- Choose 1 of 3 opponent modules
+- Ranking points awarded
+- Win streak counter updates
+
+**Defeat:**
+- XP gained for participation
+- Battle replay available
+- Rematch cooldown enforced
 
 ---
 
-### 5. Archive
+### 6. Archive & Collection
 - Scrollable list/grid of collected modules
 - View stats, lore logs, boot fragments
 - Long-press to mark favorites or delete corrupted ones
+- Filter by type, rarity, source
+- Module origins tracked (opponent names)
+- Cloud sync with offline cache
 
 ---
 
-### 6. Meta Progression (Future)
+### 6.5. Meta Progression (Future)
 - Win streak unlocks special modules (v1.5+)
 - Rare events (glitched AIs, encrypted logs)
 - Cosmetic unlocks (cursor shapes, color themes)
+---
+
+### 7. Rankings & Leaderboards
+**Local Area Rankings:**
+- City/region-based leaderboards
+- "Dominant AI in [Area Name]"
+- Weekly local tournaments
+
+**Global Rankings:**
+- Overall ranking points
+- Module diversity score
+- Win/loss ratios
+
+### 8. Privacy & Safety Settings
+**Location Privacy:**
+- **Precise**: Exact location for friends
+- **Fuzzy**: ±100-500m randomization
+- **Ghost**: Hidden from all scanning
+
+**Battle Controls:**
+- Block list management
+- Battle availability toggle
+- Safe zone detection
+- Parental controls (age 13+)
+
+### 9. Special Events
+**Location-Based Events:**
+- Landmark battles (parks, malls)
+- Community day gatherings
+- Regional exclusive modules
+
+**Timed Events:**
+- Weekend tournaments
+- Holiday module drops
+- Beta test new features
 
 ---
 
-### 7. Optional Mid-Term Goals (Post-MVP)
-- Online opponent pool (upload ghost AIs)
-- Passive scanning (background auto-battles)
-- Tournament ladder or seasonal resets
+### Technical Flow: Proximity Battle Validation
+
+1. **Client Request:**
+   - Player A requests battle with Player B
+   - GPS coordinates + accuracy sent
+   - Privacy mode applied
+
+2. **Server Validation:**
+   - Distance calculation (<100m)
+   - Safe zone check
+   - Cooldown verification
+   - Anti-spoof checks
+
+3. **Battle Execution:**
+   - Server runs simulation
+   - Results sent to both clients
+   - Replay data stored
+   - Rankings updated
 
 ---
 
-This flowchart supports both fast loops and long-term build experimentation while keeping the terminal UX intuitive and addictive.
+This proximity-focused flowchart creates a unique local competitive experience while maintaining player safety and privacy.
 

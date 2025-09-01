@@ -1,0 +1,84 @@
+version: "3"
+services:
+  postgres:
+    container_name: postgres
+    image: postgres:12.2-alpine
+    environment:
+      - POSTGRES_DB=nakama
+      - POSTGRES_PASSWORD=localdb
+    volumes:
+      - data:/var/lib/postgresql/data
+    expose:
+      - "8080"
+      - "5432"
+    ports:
+      - "5432:5432"
+      - "8080:8080"
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "postgres", "-d", "nakama"]
+      interval: 3s
+      timeout: 3s
+      retries: 5
+  prometheus:
+    container_name: prometheus
+    image: prom/prometheus
+    entrypoint: /bin/sh -c
+    command: |
+      'sh -s <<EOF
+        cat > ./prometheus.yml <<EON
+      global:
+        scrape_interval:     15s
+        evaluation_interval: 15s
+      scrape_configs:
+        - job_name: prometheus
+          static_configs:
+          - targets: ['localhost:9090']
+        - job_name: nakama
+          metrics_path: /
+          static_configs:
+          - targets: ['nakama:9100']
+      EON
+      prometheus --config.file=./prometheus.yml
+      EOF'
+    ports:
+      - '9090:9090'
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "http://localhost:9090/-/ready"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+  nakama:
+    container_name: nakama
+    image: registry.heroiclabs.com/heroiclabs/nakama:3.22.0
+    entrypoint:
+      - "/bin/sh"
+      - "-ecx"
+      - >
+        /nakama/nakama migrate up --database.address postgres:localdb@postgres:5432/nakama &&
+        exec /nakama/nakama --name ghostd1 --database.address postgres:localdb@postgres:5432/nakama --logger.level DEBUG --session.token_expiry_sec 7200 --metrics.prometheus_port 9100
+    restart: always
+    links:
+      - "postgres:db"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      prometheus:
+        condition: service_healthy
+    volumes:
+      - ./:/nakama/data
+    expose:
+      - "7349"
+      - "7350"
+      - "7351"
+      - "9100"
+    ports:
+      - "7349:7349"
+      - "7350:7350"
+      - "7351:7351"
+    healthcheck:
+      test: ["CMD", "/nakama/nakama", "healthcheck"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+volumes:
+  data:

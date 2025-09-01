@@ -3,3 +3,5 @@
 /android/
 .claude/
 CLAUDE.md
+/nakama/.cookie
+.mcp.json

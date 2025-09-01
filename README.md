@@ -8,53 +8,95 @@ This repository contains the entire source code and assets for version 1 (MVP) o
 
 ## 📱 Game Overview
 
-**Ghostd** is a fast, strategic auto-battler set in a decaying digital world. Players design modular AIs using Core, Behavior, and Augment modules, then deploy them in stylized terminal battles against wild AIs. Victory grants salvaged code fragments used to evolve and optimize builds.
+**Ghostd** is a fast, strategic auto-battler set in a decaying digital world. Players design modular AIs using Core, Behavior, and Augment modules, then deploy them in stylized terminal battles against other players or wild AIs. Victory grants salvaged code fragments used to evolve and optimize builds.
 
-* **Genre**: Auto-battler / Strategy
+* **Genre**: Auto-battler / Strategy with Online Multiplayer
 * **Aesthetic**: Hacker, cyberpunk, terminal UI (no typing required)
-* **Target Platforms**: Android & iOS (mobile only, MVP is offline-first)
+* **Target Platforms**: Android & iOS (mobile only)
+* **Backend**: Nakama server for multiplayer, leaderboards, and cloud saves
 
 ---
 
 ## 🔧 Project Structure
 
-* `/Assets`
+### Current Structure
+* `/src` - **Godot project root**
+  * `/Scenes`: `BootScene`, `MainTerminal`, `AIAssembly`, `ModuleViewer`
+  * `/Scripts`: Game logic organized by functionality
+    * `/Modules`: Core module system classes
+    * `/UI`: Terminal UI components
+  * `/Resources`: Module definitions, fonts, shaders, themes
 
-  * Game scripts, UI prefabs, module data, and battle logic
-* `/Audio`
+* `/docs` - **Game documentation**
+  * Game Design Document (GDD)
+  * Gameplay flowchart
+  * One-pager concept
 
-  * Ambient loops, glitch effects, retro UI sounds
-* `/Resources`
+### Backend Structure (Nakama)
+* `/nakama` - **Server infrastructure**
+  * `/docker-compose.yml`: Docker setup for Nakama, PostgreSQL, and Prometheus
+  * `/modules`: TypeScript modules directory (ready for game logic)
+  * `/data`: Server configuration and runtime data
+* `/src/Scripts/Network` - Client-side networking (to be implemented)
 
-  * Config files, ASCII module definitions, wild AI schematics
-* `/Scenes`
+---
 
-  * `BootScene`, `MainTerminal`, `BattleRunner`, `ModuleLab`
-* `/Scripts`
+## 🔌 Backend Requirements
 
-  * `Core`, `Behavior`, `Augment`, `BattleSystem`, `ArchiveManager`, etc.
+**Ghostd** uses Nakama as its backend server for:
+- **Real-time multiplayer battles**: Server-authoritative combat simulation
+- **Matchmaking**: Skill-based matching for fair battles
+- **Leaderboards**: Global and weekly rankings
+- **Cloud saves**: Sync progress across devices
+- **Module validation**: Server-side verification to prevent cheating
+
+The game includes an offline mode for single-player battles against AI opponents.
 
 ---
 
 ## 🚀 Getting Started
 
-1. **Godot Version**: This project uses **Godot 4**
-2. Clone the repo
-3. Open the project in Godot GDScript
+### Prerequisites
+1. **Godot Version**: This project uses **Godot 4.4.1**
+2. **Android SDK**: Required for Android builds
+3. **Docker & Docker Compose**: Will be required for Nakama integration (planned)
+
+### Current Setup
+1. Clone the repo
+2. **Start Nakama Server** (optional for local testing):
+   ```bash
+   cd nakama
+   docker-compose up -d
+   ```
+3. Open the project in Godot from the `src/` directory
 4. Set the target platform (Android or iOS)
-5. Run `MainTerminal` scene to begin
+5. Run `BootScene` to start the game
+
+### Nakama Server Access
+- **Console**: http://localhost:7351
+- **HTTP API**: http://localhost:7350
+- **gRPC**: localhost:7349
 
 ---
 
 ## ✅ MVP Feature Checklist
 
-* [x] Tap-based terminal UI
-* [x] Modular AI construction (3-part system)
-* [x] Procedural wild AI generation
-* [x] Turn-based, auto-resolved battle system
-* [x] Salvage and archive progression system
-* [x] Offline save/load system
-* [x] Audio feedback and ambient loops
+### Implemented
+* [ ] Tap-based terminal UI
+* [ ] Modular AI construction (3-part system)
+* [ ] Procedural wild AI generation
+* [ ] Turn-based, auto-resolved battle system (local only)
+* [ ] Salvage and archive progression system
+* [ ] Local save system
+* [ ] Audio feedback and ambient loops
+
+### Planned (Nakama Integration)
+* [ ] Online multiplayer battles (PvP)
+* [ ] Global and weekly leaderboards
+* [ ] Cloud save synchronization
+* [ ] Server-authoritative battle validation
+* [ ] Matchmaking system
+* [ ] Social features (friends, spectating)
 
 ---
 
@@ -78,7 +120,8 @@ This repository contains the entire source code and assets for version 1 (MVP) o
 ## 🙌 Credits
 
 **Developer**: \[Your Name or Handle]
-**Engine**: Godot 4
+**Engine**: Godot 4.4.1
+**Backend**: Nakama Server
 **Audio**: Freesound.org, custom design, retro archive samples
 **Font**: Terminal-inspired bitmap font (public domain or licensed)
 
